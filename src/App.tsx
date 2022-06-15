@@ -1,9 +1,12 @@
+import { Sidebar } from "./components/Sidebar";
+
+import "./global.css";
 import "./App.module.css";
 
 function App() {
   return (
     <>
-      <h1> Hello, world! </h1>
+      <Sidebar />
     </>
   );
 }

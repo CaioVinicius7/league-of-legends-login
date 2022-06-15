@@ -1,0 +1,205 @@
+aside {
+  max-width: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--whitesmoke);
+}
+
+aside img {
+  width: 8rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto;
+  width: 100%;
+}
+
+.container h1 {
+  font-size: 1.6rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 65vh;
+}
+
+.loginForm .loginHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginForm .loginHeader input {
+  background: var(--light-grey);
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.loginForm .loginHeader input::placeholder {
+  color: var(--medium-grey);
+}
+
+.loginForm .loginHeader input[type="text"] {
+  margin-top: 1.5rem;
+  border: 0;
+  border-radius: 4px;
+  width: 70%;
+  height: 3.25rem;
+}
+
+.loginForm .loginHeader input[type="password"] {
+  margin-top: 1.2rem;
+  border: 0;
+  border-radius: 4px;
+  width: 70%;
+  height: 3.25rem;
+}
+
+.loginForm .loginHeader .alternativeLoginButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  width: 70%;
+}
+
+.loginForm .loginHeader .alternativeLoginButtons button {
+  width: 33%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+}
+
+.loginForm .loginHeader .facebookButton {
+  background: var(--blue);
+  border: 0;
+  margin-right: 0.3rem;
+}
+
+.loginForm .loginHeader .googleButton {
+  background: var(--white);
+  margin-right: 0.3rem;
+  border: 1.75px solid var(--light-grey);
+}
+
+.loginForm .loginHeader .appleButton {
+  background: var(--black);
+  border: 0;
+}
+
+.loginForm .loginHeader .keepLogin {
+  width: 70%;
+  margin-top: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.loginHeader .keepLogin input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background: var(--light-grey);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.loginHeader .keepLogin input[type="checkbox"]:checked {
+  background: var(--red) url("../assets/checked.svg") center no-repeat;
+}
+
+.keepLogin label {
+  padding-left: 0.7rem;
+}
+
+.loginForm .loginFooter {
+  margin-bottom: 3rem;
+}
+
+.loginForm .loginFooter button[type="submit"] {
+  background: var(--whitesmoke);
+  border: 2px solid var(--light-grey);
+  border-radius: 24px;
+  padding: 1rem;
+  color: var(--light-grey);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container footer {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.container footer .accountOptions a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--medium-grey);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container footer .accountOptions a:hover {
+  color: var(--black);
+}
+
+.container footer span {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4rem;
+  margin-top: -0.7rem;
+  font-size: 0.6rem;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.container footer span:hover {
+  color: var(--deep-grey);
+}
+
+@media (max-width: 1960px) {
+  aside {
+    max-width: 100%;
+  }
+
+  .container {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 70%;
+  }
+}
