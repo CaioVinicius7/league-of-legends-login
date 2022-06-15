@@ -1,0 +1,66 @@
+.bannerContainer {
+  width: 75%;
+  margin-left: 25%;
+  height: 100vh;
+  margin-top: -100vh;
+  background: url("../assets/wallpaper.jpg");
+  background-size: cover;
+}
+
+.bannerContainer .bannerButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerContainer .bannerButtons button {
+  margin: 2.75rem 2.5rem;
+}
+
+.bannerContainer .bannerButtons button:first-child {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: var(--pink);
+  transform: rotate(45deg);
+  transition: 0.1s;
+}
+
+.bannerContainer .bannerButtons button:first-child span {
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerContainer .bannerButtons button:first-child:hover {
+  background: var(--medium-pink);
+}
+
+.bannerContainer .bannerButtons button:nth-child(2) {
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  color: var(--grey);
+  border-radius: 18px;
+  padding: 1px;
+  cursor: pointer;
+  transition: 0.4s;
+
+  background: rgba(150, 150, 150, 0.25);
+  box-shadow: 2px var(--deep-grey);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerContainer .bannerButtons button:nth-child(2):hover {
+  color: var(--white);
+  background: rgba(150, 150, 150, 0.3);
+}
+
+@media (max-width: 1400px) {
+  .bannerContainer {
+    display: none;
+  }
+}
