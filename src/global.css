@@ -2,16 +2,28 @@
 
 :root {
   --white: #fff;
+  --medium-white: #f8f8f8;
   --whitesmoke: #f9f9f9;
+  --grey-border: #e9e9e9;
   --light-grey: #ececec;
+  --light-grey-2: #e6e6e6;
+  --light-grey-3: #e7e7e7;
   --grey: #c4c4c4;
   --medium-grey: #a7a7a7;
   --deep-grey: #343434;
   --black: #000000;
+  --medium-black: #141414;
+  --light-black: #333333;
   --blue: #1b77f3;
+  --medium-blue: #0965e0;
   --red: #cf3c3f;
-  --pink: #e04bef;
+  --medium-red: #bc252a;
+  --light-pink: #e04bef;
+  --pink: #be29cc;
   --medium-pink: #8f3990;
+  --pink-letters: #cb29cc;
+  --pink-background: #f3e3f5;
+  --pink-border: #eabfef;
 }
 
 * {

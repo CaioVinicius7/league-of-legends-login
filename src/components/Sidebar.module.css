@@ -1,5 +1,5 @@
 aside {
-  max-width: 25%;
+  grid-area: sidebar;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@ aside img {
 
 .container h1 {
   font-size: 1.6rem;
+  cursor: default;
 }
 
 .loginForm {
@@ -41,31 +42,95 @@ aside img {
   align-items: center;
 }
 
-.loginForm .loginHeader input {
+.loginForm .loginHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loginForm .loginHeader .inputGroup {
+  width: 70%;
+}
+
+.loginForm .loginHeader .inputGroup input {
   background: var(--light-grey);
+  color: var(--deep-grey);
   padding: 0 1rem;
   font-size: 0.75rem;
   font-weight: bold;
+  transition: 0.1s;
+  border: 0;
 }
 
-.loginForm .loginHeader input::placeholder {
+.loginForm .loginHeader .inputGroup input:focus {
+  border: 1px solid var(--light-black);
+  background: var(--whitesmoke);
+}
+
+.loginForm .loginHeader .inputGroup input:focus:hover {
+  background: var(--whitesmoke);
+}
+
+.loginForm .loginHeader .inputGroup input:hover {
+  background: var(--light-grey-3);
+}
+
+.loginForm .loginHeader .inputGroup input::placeholder {
   color: var(--medium-grey);
 }
 
-.loginForm .loginHeader input[type="text"] {
-  margin-top: 1.5rem;
-  border: 0;
+.loginForm .loginHeader .inputGroup input[type="text"],
+input[type="password"] {
   border-radius: 4px;
-  width: 70%;
+  width: 100%;
   height: 3.5rem;
 }
 
-.loginForm .loginHeader input[type="password"] {
-  margin-top: 1.2rem;
-  border: 0;
-  border-radius: 4px;
+.loginForm .loginHeader .inputGroup input[type="text"] {
+  margin-top: 1.5rem;
+}
+
+.loginForm .loginHeader .inputGroup .invalidUsername {
+  background: var(--pink-background);
+  border: 2px solid var(--pink-border);
+}
+
+.loginForm .loginHeader .inputGroup .invalidUsername:hover {
+  background: var(--pink-background);
+}
+
+.loginForm .loginHeader .inputGroup .invalidUsername:focus {
+  border: var(--pink-border);
+  background: var(--pink-background);
+}
+
+.loginForm .loginHeader .inputGroup .invalidUsername:focus:hover {
+  background: var(--pink-background);
+}
+
+.loginForm .loginHeader .alertMessage {
   width: 70%;
-  height: 3.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--pink-letters);
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.loginForm .loginHeader .alertMessage i {
+  padding-right: 0.5rem;
+}
+
+.loginForm .loginHeader .inputGroup input[type="password"] {
+  margin-top: 1.2rem;
+}
+
+.loginForm .loginHeader .inputGroup label {
+  font-size: 0.8rem;
+  color: var(--medium-grey);
+  font-weight: bold;
 }
 
 .loginForm .loginHeader .alternativeLoginButtons {
@@ -84,6 +149,7 @@ aside img {
   justify-content: center;
   padding: 0.5rem 0.6rem;
   cursor: pointer;
+  transition: 0.1s;
 }
 
 .loginForm .loginHeader .facebookButton {
@@ -92,15 +158,28 @@ aside img {
   margin-right: 0.3rem;
 }
 
+.loginForm .loginHeader .facebookButton:hover {
+  background: var(--medium-blue);
+}
+
 .loginForm .loginHeader .googleButton {
   background: var(--white);
   margin-right: 0.3rem;
-  border: 1.75px solid var(--light-grey);
+  border: 2.25px solid var(--light-grey);
+}
+
+.loginForm .loginHeader .googleButton:hover {
+  background: var(--medium-white);
+  border: 2.25px solid var(--grey-border);
 }
 
 .loginForm .loginHeader .appleButton {
   background: var(--black);
   border: 0;
+}
+
+.loginForm .loginHeader .appleButton:hover {
+  background: var(--medium-black);
 }
 
 .loginForm .loginHeader .keepLogin {
@@ -122,28 +201,53 @@ aside img {
   padding: 0.5rem;
 }
 
+.loginHeader .keepLogin input[type="checkbox"]:hover {
+  background: var(--light-grey-2);
+}
+.loginHeader .keepLogin input[type="checkbox"]:focus {
+  border: 0;
+}
+
 .loginHeader .keepLogin input[type="checkbox"]:checked {
   background: var(--red) url("../assets/checked.svg") center no-repeat;
 }
 
 .keepLogin label {
   padding-left: 0.7rem;
+  cursor: pointer;
 }
 
 .loginForm .loginFooter {
   margin-bottom: 3rem;
 }
 
-.loginForm .loginFooter button[type="submit"] {
+.loginForm .loginFooter .submitButtonInvalid {
   background: var(--whitesmoke);
   border: 2px solid var(--light-grey);
   border-radius: 24px;
-  padding: 1rem;
+  padding: 1.2rem;
   color: var(--light-grey);
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loginForm .loginFooter .submitButtonValid {
+  background: var(--red);
+  border: 2px solid var(--light-grey);
+  border-radius: 24px;
+  padding: 1.2rem;
+  color: var(--light-grey);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginForm .loginFooter .submitButtonValid:hover {
+  background: var(--medium-red);
+  cursor: pointer;
 }
 
 .container footer {
@@ -183,10 +287,6 @@ aside img {
 }
 
 @media (max-width: 1400px) {
-  aside {
-    max-width: 100%;
-  }
-
   .container {
     width: 45%;
   }
@@ -194,12 +294,16 @@ aside img {
 
 @media (max-width: 950px) {
   .container {
-    width: 60%;
+    width: 65%;
   }
 }
 
 @media (max-width: 700px) {
   .container {
-    width: 70%;
+    width: 95%;
+  }
+
+  .container footer span {
+    display: none;
   }
 }

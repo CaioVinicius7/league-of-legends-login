@@ -1,8 +1,6 @@
 .bannerContainer {
-  width: 75%;
-  margin-left: 25%;
+  grid-area: banner;
   height: 100vh;
-  margin-top: -100vh;
   background: url("../assets/wallpaper.jpg");
   background-size: cover;
 }
@@ -37,8 +35,8 @@
 }
 
 .bannerContainer .bannerButtons button:nth-child(2) {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border: 0;
   color: var(--grey);
   border-radius: 18px;

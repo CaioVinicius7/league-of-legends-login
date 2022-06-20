@@ -2,11 +2,11 @@ import { Sidebar } from "./components/Sidebar";
 import { Banner } from "./components/Banner";
 
 import "./global.css";
-import "./App.module.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <main>
+    <main className={styles.main}>
       <Sidebar />
       <Banner />
     </main>
