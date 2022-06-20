@@ -307,3 +307,23 @@ input[type="password"] {
     display: none;
   }
 }
+
+@media (max-height: 715px) {
+  aside img {
+    margin-top: 2rem;
+  }
+
+  .container {
+    margin: 2.5rem auto;
+  }
+}
+
+@media (max-height: 715px) {
+  footer {
+    display: none;
+  }
+
+  .loginForm .loginFooter {
+    margin-bottom: 0rem;
+  }
+}
