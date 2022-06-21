@@ -13,13 +13,28 @@ import styles from "./Sidebar.module.css";
 export function Sidebar() {
   const [warningMessage, setWarningMessage] = useState(false);
   const [dataValidity, setDataValidity] = useState(false);
-  const [inputClass, SetInputClass] = useState(styles.invalidUsername);
+  const [usernameInputClass, setUsernameInputClass] = useState(
+    styles.invalidUsername
+  );
+  const [passwordInputClass, setPasswordInputClass] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [keepLogin, setKeepLogin] = useState(false);
 
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+
   useEffect(() => {
-    warningMessage ? SetInputClass(styles.invalidUsername) : SetInputClass("");
+    warningMessage
+      ? setUsernameInputClass(styles.invalidUsername)
+      : username.length > 1
+      ? setUsernameInputClass(styles.InputWithValue)
+      : setUsernameInputClass("");
+
+    password.length >= 1
+      ? setPasswordInputClass(styles.InputWithValue)
+      : setPasswordInputClass("");
+
     verifyDataValidity();
   });
 
@@ -49,7 +64,6 @@ export function Sidebar() {
 
   function handleSubmitForm(event: FormEvent) {
     event.preventDefault();
-    console.log(event);
     setUsername("");
     setPassword("");
     setKeepLogin(false);
@@ -69,14 +83,13 @@ export function Sidebar() {
                 type="text"
                 name="username"
                 id="username"
-                placeholder="NOME DE USUÁRIO"
-                className={inputClass}
+                className={usernameInputClass}
                 value={username}
                 onChange={handleUsernameChange}
                 onBlur={verifyUsernameValidity}
                 autoComplete="off"
               />
-              {/* <label htmlFor="username"> NOME DE USUÁRIO </label> */}
+              <label htmlFor="username"> NOME DE USUÁRIO </label>
             </div>
 
             {warningMessage && (
@@ -93,11 +106,11 @@ export function Sidebar() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="SENHA"
+                className={passwordInputClass}
                 value={password}
                 onChange={handlePasswordChange}
               />
-              {/* <label htmlFor="password"> SENHA </label> */}
+              <label htmlFor="password"> SENHA </label>
             </div>
 
             <div className={styles.alternativeLoginButtons}>
